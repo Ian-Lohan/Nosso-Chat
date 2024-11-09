@@ -16,7 +16,7 @@ app.secret_key = 'supersecretkey'
 socketio = SocketIO(app)
 
 # Configuração do Redis
-redis_host = os.getenv('REDIS_HOST', 'localhost')
+redis_host = os.getenv('REDIS_HOST', 'nosso-chat.onrender.com')
 redis_port = int(os.getenv('REDIS_PORT', 6379))
 redis_client = redis.StrictRedis(host=redis_host, port=redis_port, db=0, decode_responses=True)
 
@@ -224,5 +224,5 @@ def update_users_list():
     socketio.emit('update_users', users, to=None)
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
+    port = int(os.environ.get('PORT', 6379))
     socketio.run(app, host='0.0.0.0', port=port, allow_unsafe_werkzeug=True)
