@@ -16,9 +16,15 @@ app.secret_key = 'supersecretkey'
 socketio = SocketIO(app)
 
 # Configuração do Redis
-redis_host = os.getenv('REDIS_HOST', 'localhost')
+redis_host = os.getenv('REDIS_HOST', 'nosso-chat.onrender.com')
 redis_port = int(os.getenv('REDIS_PORT', 6379))
 redis_client = redis.StrictRedis(host=redis_host, port=redis_port, db=0, decode_responses=True)
+
+try:
+    redis_client.ping()
+    print("Connected to Redis")
+except redis.ConnectionError:
+    print("Failed to connect to Redis")
 
 try:
     locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
