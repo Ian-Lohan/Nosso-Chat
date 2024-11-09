@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_mail import Mail, Message
-from flask_socketio import SocketIO, emit, join_room, leave_room
+from flask_socketio import SocketIO, emit
 from itsdangerous import URLSafeTimedSerializer
 import redis
 import locale
@@ -18,8 +18,11 @@ socketio = SocketIO(app)
 # Configuração do Redis
 redis_client = redis.StrictRedis(host='localhost', port=6379, db=0, decode_responses=True)
 
-locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
-
+try:
+    locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
+except locale.Error:
+    locale.setlocale(locale.LC_TIME, 'C')
+    
 # Configuração do Flask-Mail usando variáveis de ambiente
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
