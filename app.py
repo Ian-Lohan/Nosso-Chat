@@ -23,6 +23,7 @@ try:
     locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
 except locale.Error:
     locale.setlocale(locale.LC_TIME, 'C')
+    
 # Configuração do Flask-Mail usando variáveis de ambiente
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
