@@ -17,7 +17,7 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
-socketio = SocketIO(app, async_mode='eventlet')
+socketio = SocketIO(app, async_mode='gevent')
 
 # Configuração do Redis
 redis_url = os.getenv('REDIS_URL')
