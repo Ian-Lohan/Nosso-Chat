@@ -7,6 +7,10 @@ import redis
 import locale
 from dotenv import load_dotenv
 import os
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)
 
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
@@ -17,7 +21,16 @@ socketio = SocketIO(app)
 
 # Configuração do Redis
 redis_url = os.getenv('REDIS_URL')
+if not redis_url:
+    raise ValueError('É necessário definir a variável de ambiente REDIS_URL')
 redis_client = redis.StrictRedis.from_url(redis_url, decode_responses=True)
+
+try:
+    redis_client = redis.StrictRedis.from_url(redis_url, decode_responses=True)
+    redis_client.ping()
+    logging.info('Conexão com o Redis estabelecida com sucesso!')
+except redis.ConnectionError as e:
+    logging.error(f'Erro ao conectar com o Redis: {str(e)}')
 
 try:
     locale.setlocale(locale.LC_TIME, 'pt_BR.utf8')
