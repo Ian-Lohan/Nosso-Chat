@@ -149,7 +149,7 @@ def chat():
 
 # Evento de conexão do Socket.IO
 @socketio.on('connect')
-def handle_connect(auth):
+def handle_connect():
     username = session.get('username')
     if username:
         redis_client.sadd('logged_in_users', username)
