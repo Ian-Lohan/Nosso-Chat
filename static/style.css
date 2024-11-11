@@ -15,10 +15,6 @@ body {
   align-items: center;
 }
 
-.chat-container-full-width {
-  width: 90%;
-}
-
 h1, h2 {
   color: #343a40;
   font-weight: bold;
