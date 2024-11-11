@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block title %}Chat{% endblock %} {% block content %}
+{% extends "base.html" %} {% block title %}Chat{% endblock %} {% block content
+%}
 <div class="container">
   <div class="row align-items-center">
     <div class="col text-center">
@@ -21,13 +22,14 @@
     </div>
     <div class="col-md-9">
       <div id="chat-box" class="card">
-        <div class="card-body" style="height: 400px; overflow-y: auto; position: relative;">
-          <div id="typing-indicator" class="text-muted" style="display: none; position: absolute; bottom: 0; left: 0; width: 100%;"></div>
-        </div>
+        <div class="card-body" style="height: 400px; overflow-y: auto"></div>
       </div>
     </div>
   </div>
   <div class="user-input mt-3">
+    <div id="typing-indicator" class="text-muted" style="display: none">
+      {{ username }} está digitando...
+    </div>
     <div class="input-group">
       <div class="input-group-prepend">
         <span class="input-group-text">{{ username }}</span>
