@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% block title %}Chat{% endblock %} {% block content
 %}
-<div class="container-chat">
+<div class="container chat-container-full-width">
   <div class="row align-items-center">
     <div class="col text-center">
       <h1 class="text-center">NossoChat!</h1>
@@ -162,7 +162,6 @@
         const messageSpan = document.createElement("span");
         const timeSpan = document.createElement("span");
         const [username, color, message, time] = msg.split(":");
-
         if (username === "system") {
           messageContainer.textContent = `${message} ${time}`;
           messageContainer.style.fontStyle = "italic";

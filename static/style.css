@@ -15,8 +15,8 @@ body {
   align-items: center;
 }
 
-.container-chat {
-  margin-top: 20px;
+.chat-container-full-width {
+  width: 90%;
 }
 
 .container form {
