@@ -104,7 +104,14 @@ p {
   margin-top: 20px;
 }
 
+/* Estilos para o indicador de digitação */
 #typing-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f9fa;
+  padding: 5px;
   font-style: italic;
   color: #6c757d;
 }
