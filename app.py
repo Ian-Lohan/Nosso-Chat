@@ -1,13 +1,13 @@
-from datetime import datetime
 from flask import Flask, render_template, request, redirect, session, url_for
 from flask_mail import Mail, Message
 from flask_socketio import SocketIO, emit
 from itsdangerous import URLSafeTimedSerializer
 import redis
-import locale
+from datetime import datetime
 from dotenv import load_dotenv
 import os
 import logging
+import locale
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
@@ -17,13 +17,12 @@ load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
-socketio = SocketIO(app)
+socketio = SocketIO(app, async_mode='eventlet')
 
 # Configuração do Redis
 redis_url = os.getenv('REDIS_URL')
 if not redis_url:
     raise ValueError('É necessário definir a variável de ambiente REDIS_URL')
-redis_client = redis.StrictRedis.from_url(redis_url, decode_responses=True)
 
 try:
     redis_client = redis.StrictRedis.from_url(redis_url, decode_responses=True)
@@ -230,4 +229,4 @@ def update_users_list():
     socketio.emit('update_users', users, to=None)
 
 if __name__ == '__main__':
-    socketio.run(app)
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True, use_reloader=False, log_output=True, engineio_logger=True)
