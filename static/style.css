@@ -84,6 +84,10 @@ p {
   margin-top: 20px;
 }
 
+.form-group {
+  width: 70%;
+}
+
 /* Estilos responsivos */
 @media (max-width: 600px) {
   .chat-container {
