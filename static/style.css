@@ -7,14 +7,15 @@ body {
   padding: 0;
 }
 
-.container {
-  margin-top: 20px;
+.container{
+  margin: 20px auto;
+  width: 70%;
 }
 
-.container form {
-  width: 70%;
-  align-content: center;
-  justify-content: center;
+.container-chat {
+  width: 90%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 h1, h2 {
