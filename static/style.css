@@ -7,13 +7,13 @@ body {
   padding: 0;
 }
 
-.container{
+.container {
   margin: 20px auto;
   width: 70%;
 }
 
 .container-chat {
-  width: 90%;
+  width: 100%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
