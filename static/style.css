@@ -1,0 +1,103 @@
+/* Estilos gerais */
+body {
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 20px auto;
+  width: 70%;
+}
+
+.container-chat {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  color: #343a40;
+  font-weight: bold;
+}
+
+p {
+  color: #6c757d;
+  margin-top: 10px;
+}
+
+/* Estilos para formulários */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  font-size: 1rem;
+}
+
+.btn {
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+
+#online-users {
+  height: 400px;
+  background-color: white;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#online-users h3 {
+  text-align: center;
+}
+
+#users-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#users-list li {
+  padding: 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-input {
+  margin-top: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 600px) {
+  .chat-container {
+      flex-direction: column;
+  }
+
+  #chat-box, #online-users {
+      width: 80%;
+  }
+}

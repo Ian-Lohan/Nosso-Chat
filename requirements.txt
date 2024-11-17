@@ -1,0 +1,8 @@
+Flask
+Flask-Mail
+Flask-SocketIO
+itsdangerous
+python-dotenv
+redis
+gunicorn
+gevent
