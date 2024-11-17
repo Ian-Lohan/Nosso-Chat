@@ -1,4 +1,4 @@
-# Chat App
+# NossoChat!
 Um simples chat assincrono desenvolvido com Python, HTML e Redis, e disponibilizado online com a plataforma Render.
 
 ![Screenshot](/img/screenshot_login.png)
