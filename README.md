@@ -1,7 +1,7 @@
 # Chat App
 Um simples chat assincrono desenvolvido com Python, HTML e Redis.
 
-![Screenshot](img\screenshot_login.png)
+![Screenshot](\img\screenshot_login.png)
 
 ## Configuração
 
