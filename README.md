@@ -1,5 +1,5 @@
 # Chat App
-Um simples chat assincrono desenvolvido com Python, HTML e Redis.
+Um simples chat assincrono desenvolvido com Python, HTML e Redis, e disponibilizado online com a plataforma Render.
 
 ![Screenshot](/img/screenshot_login.png)
 
@@ -16,3 +16,6 @@ Um simples chat assincrono desenvolvido com Python, HTML e Redis.
 - Chat em Tempo Real
 - Lista de Usuários Online
 - Recuperação de Senha
+
+## Teste o App!
+Acesse https://nosso-chat.onrender.com/ e teste o projeto!
